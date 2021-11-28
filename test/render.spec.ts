@@ -14,6 +14,9 @@ describe('Simple Render checks', () => {
         'Hi Ada Lovelace!'
       )
     })
+    it('Empty interpolation tag works', () => {
+      expect(render(compile('Hi <%=%>'), {})).toEqual('Hi undefined')
+    })
     it('Rendering function works', () => {
       expect(render(compile('Hi \n<%- =it.name_%>  !'), { name: 'Ada Lovelace' })).toEqual(
         'Hi Ada Lovelace!'
